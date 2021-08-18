@@ -28,9 +28,14 @@ deleteButton.forEach(button => {
 function handleClick(event, check = true) {
 
     event.preventDefault() //serve para parar de alterar a URL quando se clica para abrir o modal
-
     const text =  check ? "Tem certeza que você deseja marcar como lida" : "Tem certeza que você deseja excluir"
-    
+    const slug = check ? "check" : "delete"
+    const roomId = document.querySelector("#room-id").dataset.id
+    const questionId = event.target.dataset.id
+
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action", `/room/${roomId}/${questionId}/:${slug}`)
+
     //estrutura de ternários
     modalTitle.innerHTML = check ? "Marcar como lida" : "Excluir esta pergunta"
     //exemplo com template string

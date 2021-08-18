@@ -31,7 +31,7 @@
                     <img src="images/Logo.png" alt="Rocket.Q Logo">
                 </a>
                 <div class="buttons">
-                    <div class="button outlined">
+                    <div class="button outlined" id="room-id" data-id="323243">
                         #323243
                         <img src="/images/icon-copy.svg" alt="Copiar numero">
                     </div>
@@ -75,11 +75,11 @@
                             </div>
 
                             <div class="actions">
-                                <a href="#" class="check">
+                                <a href="#" class="check" data-id="2">
                                     <img src="/images/check.svg" alt="Marcar como lida">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="delete">
+                                <a href="#" class="delete" data-id="2">
                                     <img src="/images/trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -97,11 +97,11 @@
                             </div>
 
                             <div class="actions">
-                                <a href="#" class="check">
+                                <a href="#" class="check" data-id="3">
                                     <img src="/images/check.svg" alt="Marcar como lida">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="delete">
+                                <a href="#" class="delete" data-id="3">
                                     <img src="/images/trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -119,11 +119,11 @@
                             </div>
 
                             <div class="actions">
-                                <a href="#" class="check">
+                                <a href="#" class="check" data-id="4">
                                     <img src="/images/check.svg" alt="Marcar como lida">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="delete">
+                                <a href="#" class="delete" data-id="4">
                                     <img src="/images/trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -141,7 +141,7 @@
                             </div>
 
                             <div class="actions">
-                                <a href="#" class="completed">
+                                <a href="#" class="completed" data-id="1">
                                     <img src="/images/check.svg" alt="Pergunta lida">
                                     Pergunta lida
                                 </a>
@@ -158,7 +158,8 @@
             <div class="modal">
                 <h2>Excluir pergunta</h2>
                 <p>Tem certeza que você deseja excluir essa pergunta?</p>
-                <form action="#">
+
+                <form action="#" method="POST">
                     <label class="sr-only" for-id="password">Digite sua senha de admin</label>
                     <input type="password" name="password" placeholder="Digite sua senha">
 
