@@ -14,27 +14,33 @@ const checkButtons = document.querySelectorAll(".actions a.check")
 // adicionar o event listener para cada botão
 checkButtons.forEach(button => {
     // adicionar a escuta
-    button.addEventListener("click", event => {
-
-        modalTitle.innerHTML = "Marcar como lida"
-        modalDescription.innerHTML = "Tem certeza que você deseja marcar como lida?"
-
-        modal.open()
-    })
+    button.addEventListener("click", handleClick) 
 })
 
 /*Quando o botão delete for clicado, ele abre a modal*/
 const deleteButton = document.querySelectorAll(".actions a.delete")
 
 deleteButton.forEach(button => {
-    button.addEventListener("click", event =>{
+    button.addEventListener("click", (event) => handleClick(event, false))
 
-        modalTitle.innerHTML = "Excluir pergunta"
-        modalDescription.innerHTML = "Tem certeza que você deseja excluir essa pergunta?"
-
-        modal.open()
-    })
 })
+
+function handleClick(event, check = true) {
+
+    event.preventDefault() //serve para parar de alterar a URL quando se clica para abrir o modal
+
+    const text =  check ? "Tem certeza que você deseja marcar como lida" : "Tem certeza que você deseja excluir"
+    
+    //estrutura de ternários
+    modalTitle.innerHTML = check ? "Marcar como lida" : "Excluir esta pergunta"
+    //exemplo com template string
+    modalDescription.innerHTML = `${text} esta pergunta?`
+    modalButton.innerHTML = check ? "Sim, marcar com lida" : "Sim, excluir"
+
+    check? modalButton.classList.remove("red") : modalButton.classList.add("red")
+
+    modal.open();
+}
 
 
 
