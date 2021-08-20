@@ -10,8 +10,8 @@
         <meta name = "viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- STYLES -->
-        <link rel="stylesheet" href="styles/home.css">
-        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="/styles/home.css">
+        <link rel="stylesheet" href="/styles/global.css">
         
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
     <body>
         <div id="home" class="content">
             <header>
-                <img src="images/Logo.png" alt="Rocket.Q Logo">
+                <img src="/images/Logo.png" alt="Rocket.Q Logo">
             </header>
 
             <div id="bg">
@@ -33,31 +33,8 @@
     
             <main>
                 <div class="container">
-                    <section class="formulario">
-                        <form action="">
-                            <h2>Entre como participante</h2>
-                            <label class="sr-only" for="room-id">Código da sala</label>
-                            <input type="number" id="room-id" placeholder="Código da Sala">
-                            <button>
-                                <img src="images/icon-login.svg">
-                                Entrar na sala
-                            </button>
-                        </form>
-                    </section>
-    
-                    <div class="separator">
-                        <div></div>
-                        <div>ou</div>
-                        <div></div>
-                    </div>
-    
-                    <section>
-                        <h2>Criei sua própria sala de forma fácil</h2>
-                        <a href="create-room.hmtl" class="button outlined">
-                            <img src="images/icon-users.svg" alt="Criar sala">
-                            Criar Sala
-                        </a>
-                    </section>
+                        <!--Vai renderizar a parte correta de acordo com a url-->
+                        <%-  include(`parts/${page}`)  %>
                 </div>
             </main>
         </div>
